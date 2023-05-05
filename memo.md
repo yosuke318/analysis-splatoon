@@ -9,3 +9,6 @@ https://maasaablog.com/development/backend/python/737/#toc5
 ###　暫定対応
 1. s3sをpythonのなかで定期実行
 2. もちろんgit管理外にする
+
+毎日落としてdbに蓄積
+https://dl-stats.stats.ink/splatoon-3/battle-results-csv/2023/04/
