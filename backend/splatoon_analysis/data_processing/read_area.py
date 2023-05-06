@@ -8,14 +8,15 @@ class DataImport:
         self.yesterday = yesterday
 
     def insert_to_game(self):
-        df = pd.read_csv(f"../../../csv/{self}.csv")
+        df = pd.read_csv(f"../../../csv/{self.yesterday}.csv")
         print(df)
 
 
 def main():
     current_date = datetime.date.today() - datetime.timedelta(days=1)
     yesterday = current_date.strftime('%Y-%m-%d')
-    DataImport.insert_to_game(yesterday)
+    di = DataImport(yesterday)
+    di.insert_to_game()
 
 
 if __name__ == "__main__":
