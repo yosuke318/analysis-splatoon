@@ -6,3 +6,4 @@ uwsgi==2.0.19.1
 pandas==1.2.4
 scikit-learn
 psycopg2
+python-dotenv

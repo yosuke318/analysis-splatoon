@@ -1,8 +1,11 @@
 import pandas as pd
 import datetime
-
+import os
 import psycopg2
 from psycopg2.extras import execute_values
+from dotenv import load_dotenv
+
+
 
 
 class DataImport:
@@ -64,8 +67,10 @@ class DataImport:
 
 
 def main():
+    load_dotenv('../../../.env')
     current_date = datetime.date.today() - datetime.timedelta(days=1)
     yesterday = current_date.strftime('%Y-%m-%d')
+    env_host = os.getenv('host')
     di = DataImport(day=yesterday,
                     host='192.168.11.15',
                     port='5432',
