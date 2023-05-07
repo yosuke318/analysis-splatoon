@@ -1,5 +1,6 @@
 import pandas as pd
 import datetime
+from psycopg2.extras import execute_values
 
 
 class DataImport:
@@ -9,7 +10,12 @@ class DataImport:
 
     def insert_to_game(self):
         df = pd.read_csv(f"../../../csv/{self.yesterday}.csv")
-        print(df)
+        # todo エリアのみに絞る
+        df_area = df.query("mode == 'area'")
+        # todo データインサート
+        print('あいうえお')
+
+
 
 
 def main():
