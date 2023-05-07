@@ -15,6 +15,10 @@ class DataImport:
         # todo データインサート
         print('あいうえお')
 
+        table_name = "game"
+
+        query = f"insert into {table_name}"
+
 
 
 
