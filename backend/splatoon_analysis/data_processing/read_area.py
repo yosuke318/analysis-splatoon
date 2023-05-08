@@ -65,7 +65,7 @@ class DataImport:
 
 
 
-
+# ref: https://tanuhack.com/pandas-postgres-readto/#i
 def main():
     load_dotenv('../../../.env')
     current_date = datetime.date.today() - datetime.timedelta(days=1)
