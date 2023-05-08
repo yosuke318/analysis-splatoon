@@ -1,0 +1,5 @@
+database
+.idea
+csv
+__pycache__/
+.env

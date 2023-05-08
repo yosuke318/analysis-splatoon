@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  frontend:
+    container_name: node
+    image: spla-app:frontend
+    build:
+      context: ""
+    volumes:
+      - ../../frontend:/usr/src/app
+    ports:
+      - '3000:3000'
+    stdin_open: true
