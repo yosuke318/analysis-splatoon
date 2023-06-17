@@ -3,3 +3,4 @@ database
 csv
 __pycache__/
 .env
+infra/frontend/node_modules
