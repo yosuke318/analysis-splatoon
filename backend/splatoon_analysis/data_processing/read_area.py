@@ -6,8 +6,6 @@ from psycopg2.extras import execute_values
 from dotenv import load_dotenv
 
 
-
-
 class DataImport:
 
     def __init__(self, day, host, port, database, user, password):
@@ -64,19 +62,20 @@ class DataImport:
             self.conn = None
 
 
-
 # ref: https://tanuhack.com/pandas-postgres-readto/#i
 def main():
+    print('ai')
     load_dotenv('../../../.env')
     current_date = datetime.date.today() - datetime.timedelta(days=1)
     yesterday = current_date.strftime('%Y-%m-%d')
-    env_host = os.getenv('host')
+    host = os.getenv('host')
+
     di = DataImport(day=yesterday,
-                    host='192.168.11.15',
-                    port='5432',
-                    database='postgres',
-                    user='postgres',
-                    password='postgres')
+                    host=os.getenv('host'),
+                    port=os.getenv('port'),
+                    database=os.getenv('database'),
+                    user=os.getenv('user'),
+                    password=os.getenv('password'))
     di.connect_postgres()
     di.insert_to_game()
 
