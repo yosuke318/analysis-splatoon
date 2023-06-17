@@ -9,6 +9,8 @@ services:
     ports:
      - 8000:8000
     image: spla-app:django
+    env_file:
+      - ../../.env
     command: python manage.py runserver 0.0.0.0:8000
     depends_on:
       - db
@@ -21,7 +23,9 @@ services:
     ports:
       - 5432:5432
     restart: always
+    env_file:
+      - ../../.env
     environment:
-      POSTGRES_DB: 'postgres'
-      POSTGRES_USER: 'postgres'
-      POSTGRES_PASSWORD: 'postgres'
+      POSTGRES_DB: ${database}
+      POSTGRES_USER: ${user}
+      POSTGRES_PASSWORD: ${password}
